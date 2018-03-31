@@ -1,0 +1,27 @@
+apply plugin: 'scala'
+apply plugin: 'idea'
+apply plugin: 'gauge'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.thoughtworks.gauge.gradle:gauge-gradle-plugin:+'
+    }
+}
+
+dependencies {
+    compile (
+        'com.thoughtworks.gauge:gauge-java:+',
+        'org.scala-lang:scala-library:2.12.5'
+    )
+}
+
+repositories {
+    mavenCentral()
+}
+
+gauge {
+    specsDir = 'specs'
+}
